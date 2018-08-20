@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content_left %}
+    <h4 class="menn">目录</h4>
+    <label></label>
+    <div class="head-nav">
+        <span class="menu"> </span>
+            <ul>
+                <li><a href="{{ url_for('uid_rec') }}">推荐用户</a></li>
+                <li><a href="{{ url_for('movie') }}">获取推荐结果</a></li>
+            </ul>
+    </div>
+{% endblock %}
+
+{% block content_right %}
+    <div class="col-md-9 top-right">
+        <div class="panel panel-primary" id="display">
+            <div class="panel-body" style="height: 400px">
+                <form id="importFile" method="post" action="/movies_rec"
+                      enctype="multipart/form-data">
+                    <input id="" name="uid" style="margin-top: 8px">
+                    <input id="btn" style="margin-top: 10px" class="btn btn-primary" type="submit" value="确认">
+                </input>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

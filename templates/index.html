@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content_left %}
+    <h4 class="menn">目录</h4>
+    <label></label>
+    <div class="head-nav">
+        <span class="menu"> </span>
+            <ul>
+                <li class="active"><a href="{{ url_for('uid_rec') }}">推荐用户</a></li>
+                <li><a href="{{ url_for('movie') }}">获取推荐结果</a></li>
+            </ul>
+    </div>
+{% endblock %}
+
+{% block content_right %}
+    <div class="panel panel-primary" id="display">
+        <div class="panel-heading">
+            <h3 class="panel-title">文件显示</h3>
+        </div>
+        <div class="panel-body row pre-scrollable" id="file_display" style="height: 400px">
+            {% if rec_five %}
+                {% print(rec_five) %}
+            {% endif %}
+            {% if result %}
+                {% print(result) %}
+            {% endif %}
+        </div>
+    </div>
+    <div class="panel panel-success row pre-scrollable" id="display_output">
+        <div class="panel-heading">
+            <h3 class="panel-title">结果显示</h3>
+        </div>
+        <div class="panel-body" style="height: 150px">
+            {% if output %}
+                {% print(output) %}
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
+
+
+{#{% print("dfdfefwfdjfiewfjijfefj") %}
+<script type="text/javascript">
+    $(document).ready(function() {
+        alert("nihao");
+        var fso, ts, s;
+        var ForReading = 1;
+        fso = new ActiveXObject("Scripting.FileSystemObject");
+        ts = fso.OpenTextFile("../fileupload", ForReading);
+        s = ts.ReadLine();
+        document.getElementById("file_display").innerHTML = s;
+    })
+</script>#}
+
